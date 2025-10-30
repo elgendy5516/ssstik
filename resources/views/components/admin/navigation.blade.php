@@ -20,6 +20,11 @@
         icon="admin.icon.mini.user"
         text="My Account"
     />
+    <x-admin.nav-link
+        href="{{route('admin.maintenance')}}"
+        icon="admin.icon.mini.cog"
+        text="Maintenance"
+    />
 
     <x-admin.user-dropdown />
 </nav>

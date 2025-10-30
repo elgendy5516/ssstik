@@ -67,5 +67,14 @@ Route::withoutMiddleware(['locale'])->group(function () {
             Route::get('/me', [\App\Http\Controllers\Admin\MeController::class, 'index'])
                 ->name('me');
             Route::post('/me', [\App\Http\Controllers\Admin\MeController::class, 'store']);
+
+            Route::get('/maintenance', [\App\Http\Controllers\Admin\MaintenanceController::class, 'index'])
+                ->name('maintenance');
+            Route::post('/maintenance/clear-cache', [\App\Http\Controllers\Admin\MaintenanceController::class, 'clearCache'])
+                ->name('maintenance.clear-cache');
+            Route::post('/maintenance/optimize', [\App\Http\Controllers\Admin\MaintenanceController::class, 'optimize'])
+                ->name('maintenance.optimize');
+            Route::post('/maintenance/clear-logs', [\App\Http\Controllers\Admin\MaintenanceController::class, 'clearLogs'])
+                ->name('maintenance.clear-logs');
         });
 });
