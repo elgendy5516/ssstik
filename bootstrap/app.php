@@ -15,14 +15,13 @@ $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
-/**  Uncomment this code to customize the default public path. */
-//$app->bind('path.public', function() {
-//    // The path to the public folder
-//    // Can be customized to point to a different path.
-//    // e.g. "public_html", "../public", "../public_html"
-//    $path = "public_html";
-//    return base_path($path);
-//});
+/**
+ * Customize public path for iPage Shared Hosting
+ * public_html is the web root on iPage
+ */
+$app->bind('path.public', function() {
+    return base_path('../public_html');
+});
 
 /*
 |--------------------------------------------------------------------------

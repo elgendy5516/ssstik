@@ -1,0 +1,24 @@
+# .htaccess for Laravel Root Directory (outside public_html)
+# Place this file in the Laravel application root directory
+# This prevents direct access to Laravel files from the web
+
+# Deny access to all files in this directory and subdirectories
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Order deny,allow
+    Deny from all
+</IfModule>
+
+# Allow access only to specific directories if needed
+# Uncomment and modify as needed
+# <Directory "storage/app/public">
+#     <IfModule mod_authz_core.c>
+#         Require all granted
+#     </IfModule>
+#     <IfModule !mod_authz_core.c>
+#         Order allow,deny
+#         Allow from all
+#     </IfModule>
+# </Directory>

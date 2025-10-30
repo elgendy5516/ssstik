@@ -1,0 +1,40 @@
+; Custom PHP Configuration for iPage Shared Hosting
+; Rename this file to php.ini and place it in your public_html directory
+; Adjust values based on iPage limitations
+
+; Memory Limit
+memory_limit = 256M
+
+; Maximum execution time (seconds)
+max_execution_time = 300
+max_input_time = 300
+
+; File Upload Settings
+upload_max_filesize = 64M
+post_max_size = 64M
+
+; Error Reporting (disable in production)
+display_errors = Off
+display_startup_errors = Off
+error_reporting = E_ALL & ~E_DEPRECATED & ~E_STRICT
+log_errors = On
+
+; Session Settings
+session.gc_maxlifetime = 7200
+
+; Enable URL file access
+allow_url_fopen = On
+
+; Required Extensions (most should be enabled by default on iPage)
+extension=curl
+extension=mbstring
+extension=mysqli
+extension=pdo
+extension=pdo_mysql
+extension=gd
+extension=json
+extension=openssl
+extension=exif
+
+; Timezone
+date.timezone = UTC
